@@ -5,11 +5,13 @@
     <title>Worlds Best Calculator</title>
 
     <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <style>
 
-    </style>
+
+
 
     <script>
         var calculator = {
@@ -17,46 +19,60 @@
                 // hint: these are strings
                 var numberOne = document.forms.inputs.numberOne.value;
                 var numberTwo = document.forms.inputs.numberTwo.value;
-                document.forms.inputs.result.value = numberOne + numberTwo;
+                document.forms.inputs.result.value = parseInt(numberOne) + parseInt(numberTwo);
             },
             subtractNumbers: function () {
-                
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = parseInt(numberOne) - parseInt(numberTwo);
+            },
+            multiplyNumbers: function () {
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = parseInt(numberOne) * parseInt(numberTwo);
+            },
+            divisionNumbers: function () {
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+                document.forms.inputs.result.value = parseInt(numberOne) / parseInt(numberTwo);
             }
         }
+
 
     </script>
 
 </head>
 
-<body>
-    <div>Header</div>
-    <div>
-       <!--
+<body class="calculator">
+    <div>Simple Calculator</div>
+    <!--
          - allow two numbers to be entered
          - show buttons for add and subtract
          - show the result
         -->
-        <form name="inputs">
-            <div>
-                Number 1:
-                <input type="number" name="numberOne" class="form-control" placeholder="First number" aria-label="Number1" >
-            </div>
-            <div>
-                Number 2:
-                <input type="number" class="form-control" name="numberTwo">
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary" onclick="calculator.addNumbers()" >Add</button>
-                <button type="button" class="btn btn-primary">Substract</button>
-            </div>
-            <div>
-                <input name="result" value="0" class="form-control" disabled />
-            </div>
-        </form>
+    <form name="inputs">
+        <div>
+            Number 1:
+            <input type="number" name="numberOne" class="form-control" placeholder="First number" aria-label="Number1">
+        </div>
+        <div>
+            Number 2:
+            <input type="number" class="form-control" name="numberTwo">
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" onclick="calculator.addNumbers()">Add</button>
+            <button type="button" class="btn btn-primary" onclick="calculator.subtractNumbers()">Substract</button>
+            <button type="button" class="btn btn-primary" onclick="calculator.multiplyNumbers()">Multiply</button>
+            <button type="button" class="btn btn-primary" onclick="calculator.divisionNumbers()">Division</button>
+        </div>
+        <div>
+            <input name="result" value="0" class="form-control" disabled />
+        </div>
+    </form>
 
 
     </div>
-    <div>Footer</div>
+    <div>The End</div>
 
 
 </body>
